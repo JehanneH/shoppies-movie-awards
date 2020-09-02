@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function SearchMovies() {
+export default function SearchMovies(props) {
+  const [searchValue, setSearchValue] = useState("");
 
-  const searchMovies = async (event) => {
-    event.preventDefault();
-    console.log("submitting");
-
-    const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=3ad7027'
-
+  const handleSearchInputChanges = (e) => {
+    setSearchValue(e.target.value);
   }
+
+  const resetInput = () => {
+    setSearchValue("");
+  }
+
   return (
     <form className="form" onSubmit={searchMovies}>
       <label className="label" htmlForm="query">
