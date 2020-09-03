@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { SearchInput, Button } from "evergreen-ui";
-import { CrossIcon } from "evergreen-ui";
+import { SearchInput, Button, Icon } from "evergreen-ui";
 
 export default function Search(props) {
   const [searchValue, setSearchValue] = useState("");

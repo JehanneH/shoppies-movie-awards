@@ -1,7 +1,8 @@
 import React from "react";
+import { Popover, Button, Pane } from "evergreen-ui";
 
 const defaultImagePlaceholder =
-  "https://lh3.googleusercontent.com/proxy/lxZJ7pNqhcMGQj3PHpt4Os57N4CUI-p9GKSVl3SYKiJTWTsURA6npPVgEA9cJciAukuNaK7bJUm8OZao7OPLslXNkJrtxiw4dAabZWYdS6eBD5MAq1D_KNP23oyYRYVxCYS7olFxj97WxQ";
+  "https://critics.io/img/movies/poster-placeholder.png";
 
 const Movie = ({ movie }) => {
   const poster =
@@ -18,6 +19,24 @@ const Movie = ({ movie }) => {
         />
       </div>
       <p>({movie.Year})</p>
+      <Popover
+  content={({ close }) => (
+    <Pane
+      width={320}
+      height={320}
+      paddingX={40}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
+    >
+      <Button onClick={close}>Close</Button>
+    </Pane>
+  )}
+  shouldCloseOnExternalClick={false}
+>
+  <Button>Trigger Popover</Button>
+</Popover>
     </div>
   );
 };
