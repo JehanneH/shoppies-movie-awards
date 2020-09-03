@@ -4,10 +4,10 @@ import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
 
-const movieApiUrl = "http://www.omdbapi.com/?s=ant&apikey=3ad7027";
+const movieApiUrl = "http://www.omdbapi.com/&apikey=3ad7027";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -24,7 +24,8 @@ function App() {
     setLoading(true);
     setErrorMessage(null);
 
-    fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=3ad7027`)
+    // fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=3ad7027`)
+    fetch('http://www.omdbapi.com/'+ '?s=' + searchValue +'&apikey=3ad7027')
       .then((response) => response.json())
       .then((jsonResponse) => {
         if (jsonResponse.Response === "True") {
