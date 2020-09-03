@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { SearchInput, Button } from "evergreen-ui";
+import { CrossIcon } from "evergreen-ui";
 
 export default function Search(props) {
   const [searchValue, setSearchValue] = useState("");
@@ -19,12 +21,19 @@ export default function Search(props) {
 
   return (
     <form className="search">
-      <input
+      <SearchInput
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
       />
-      <input onClick={callSearchFunction} type="submit" value="search" />
+      <Button
+        onClick={callSearchFunction}
+        type="submit"
+        value="search"
+      >
+        Search
+        {" "}
+      </Button>
     </form>
   );
 }
