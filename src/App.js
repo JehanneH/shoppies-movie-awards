@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
 
-const movieApiUrl = "http://www.omdbapi.com/?s=girl&apikey=3ad7027";
+const movieApiUrl = "http://www.omdbapi.com/?s=ant&apikey=3ad7027";
 
 function App() {
   const [loading, setLoading] = useState(true);
