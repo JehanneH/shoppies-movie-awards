@@ -3,11 +3,12 @@ import "./App.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
+import { Spinner, Pane } from "evergreen-ui";
 
 const movieApiUrl = "http://www.omdbapi.com/&apikey=3ad7027";
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -44,7 +45,9 @@ function App() {
       <Search search={search} />
       <div className="movies">
         {loading && !errorMessage ? (
-          <span className="loading">loading...</span>
+          <Pane marginX="auto" marginY={120}>
+            <Spinner size={60}/>
+          </Pane>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
         ) : (

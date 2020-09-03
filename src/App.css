@@ -15,14 +15,6 @@
   cursor: pointer;
 }
 
-.spinner {
-  height: 80px;
-  margin: auto;
-}
-
-.App-intro {
-  font-size: large;
-}
 
 /* new css for movie component */
 
@@ -65,9 +57,9 @@
 }
 
 .loading {
-  margin: auto;
-  margin-top: 1em;
-  font-size: 30px;
+  margin: 120px;
+  margin: 120px;
+  background-color: white;
 }
 
 .search {
