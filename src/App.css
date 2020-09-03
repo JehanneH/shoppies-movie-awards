@@ -57,10 +57,18 @@
 
 .errorMessage {
   margin: auto;
+  margin-top: 1em;
+  padding: 3px;
   font-weight: bold;
   color: rgb(161, 15, 15);
+  border: solid;
 }
 
+.loading {
+  margin: auto;
+  margin-top: 1em;
+  font-size: 30px;
+}
 
 .search {
   display: flex;
