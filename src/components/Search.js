@@ -1,30 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Search(props) {
-  const [searchValue, setSearchValue] = useState("");
-
-  const handleSearchInputChanges = (e) => {
-    setSearchValue(e.target.value);
-  };
-
-  const resetInput = () => {
-    setSearchValue("");
-  };
-
-  const callSearchFunction = (e) => {
-    e.preventDefault();
-    props.search(searchValue);
-    resetInput();
-  };
-
+export default function Search({ handleInput }) {
   return (
-    <form className="search">
+    <section className="searchbox-wrap">
       <input
-        value={searchValue}
-        onChange={handleSearchInputChanges}
         type="text"
+        placeholder="Search for a movie..."
+        className="searchbox"
+        onChange={handleInput}
       />
-      <input onClick={callSearchFunction} type="submit" value="search" />
-    </form>
+    </section>
   );
 }

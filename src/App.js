@@ -1,57 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react'
+import axios from 'axios'
 import "./App.css";
-import Header from "./components/Header";
-import Movie from "./components/Movie";
+
 import Search from "./components/Search";
 
 const movieApiUrl = "http://www.omdbapi.com/?s=ant&apikey=3ad7027";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [state, setState] = useState({
+    s: "",
+    results: [],
+    selected: {}
+  })
+  const apiUrl = "http://www.omdbapi.com/?apikey=3ad7027";
 
-  useEffect(() => {
-    fetch(movieApiUrl)
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        setMovies(jsonResponse.Search);
-        setLoading(false);
-      });
-  }, []);
-
-  const search = (searchValue) => {
-    setLoading(true);
-    setErrorMessage(null);
-
-    fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=3ad7027`)
-    .then(response => response.json())
-    .then(jsonResponse => {
-      if (jsonResponse.Response === "True") {
-        setMovies(jsonResponse.Search);
-        setLoading(false);
-      } else {
-        setErrorMessage(jsonResponse.Error);
-        setLoading(false);
-      }
-    });
-  };
+  const handleInput = (e) => {
+    let s = e.target.value;
+    setState(prevState => {
+      return {...prevState, s: s}
+    })
+  }
 
   return (
     <div className="App">
-     <Header text="The Shoppies" />
-     <Search search={search} />
-     <div className="movies">
-       {loading && !errorMessage ? (
-        <span>loading...</span>
-        ) : errorMessage ? (
-         <div className="errorMessage">{errorMessage}</div>
-       ) : (
-         movies.map((movie, index) => (
-           <Movie key={`${index}-${movie.Title}`} movie={movie} />
-         ))
-       )}
-     </div>
+      <header>
+     <h1> Search Movies</h1>
+     </header>
+     <main>
+       <Search handleInput={handleInput}/>
+     </main>
    </div>
  );
 };
