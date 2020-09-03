@@ -1,5 +1,4 @@
 import React from "react";
-import { Popover, Button, Pane } from "evergreen-ui";
 
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
@@ -19,24 +18,7 @@ const Movie = ({ movie }) => {
         />
       </div>
       <p>({movie.Year})</p>
-      <Popover
-  content={({ close }) => (
-    <Pane
-      width={320}
-      height={320}
-      paddingX={40}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      flexDirection="column"
-    >
-      <Button onClick={close}>Close</Button>
-    </Pane>
-  )}
-  shouldCloseOnExternalClick={false}
->
-  <Button>Trigger Popover</Button>
-</Popover>
+      
     </div>
   );
 };
