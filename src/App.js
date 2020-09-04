@@ -52,7 +52,7 @@ function App() {
         {loading && !errorMessage ? (
           <Pane marginX="auto" marginY={120}>
           <ThemeProvider value={newTheme}>
-            <Spinner size={60} />
+            <Spinner size={80} />
           </ThemeProvider>
           </Pane>
         ) : errorMessage ? (
