@@ -19,7 +19,10 @@ const Movie = ({ movie }) => {
         isShown={show.isShown}
         onCloseComplete={() => setShow({ isShown: false })}
       >
-        <Paragraph margin={40}>Basic Example</Paragraph>
+        <Paragraph margin={40}>{movie.Title}</Paragraph>
+        <Button>
+          Nominate
+        </Button>
       </SideSheet>
 
       <h2>{movie.Title}</h2>
