@@ -3,12 +3,17 @@ import "./App.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
-import { Spinner, Pane } from "evergreen-ui";
+import { Spinner, Pane, ThemeProvider, defaultTheme } from "evergreen-ui";
 
 const movieApiUrl = "http://www.omdbapi.com/&apikey=3ad7027";
 
+const newTheme = {
+  ...defaultTheme,
+  spinnerColor: 'hotpink'
+}
+
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -46,7 +51,9 @@ function App() {
       <div className="movies">
         {loading && !errorMessage ? (
           <Pane marginX="auto" marginY={120}>
-            <Spinner size={60}/>
+          <ThemeProvider value={newTheme}>
+            <Spinner size={60} />
+          </ThemeProvider>
           </Pane>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
