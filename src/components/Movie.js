@@ -9,7 +9,6 @@ const Movie = ({ movie }) => {
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
 
   const [show, setShow] = useState(false);
-  const isShown = () => setShow(false);
 
   return (
     <div className="movie">
@@ -19,7 +18,8 @@ const Movie = ({ movie }) => {
           onCloseComplete={() => setShow({ isShown: false })}
         >
           <img
-          src={poster}>
+          src={poster}
+          alt="">
           </img>
           <Heading margin={40} size={900}>{movie.Title}</Heading>
           <Paragraph margin={40} color="muted" size={500}>
