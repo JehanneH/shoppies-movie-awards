@@ -25,13 +25,8 @@ export default function Search(props) {
         onChange={handleSearchInputChanges}
         type="text"
       />
-      <Button
-        onClick={callSearchFunction}
-        type="submit"
-        value="search"
-      >
-        Search
-        {" "}
+      <Button onClick={callSearchFunction} type="submit" value="search">
+        Search{" "}
       </Button>
     </form>
   );

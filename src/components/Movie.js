@@ -17,13 +17,12 @@ const Movie = ({ movie }) => {
           isShown={show.isShown}
           onCloseComplete={() => setShow({ isShown: false })}
         >
-          <img
-          src={poster}
-          alt="">
-          </img>
-          <Heading margin={40} size={900}>{movie.Title}</Heading>
+          <img src={poster} alt=""></img>
+          <Heading margin={40} size={900}>
+            {movie.Title}
+          </Heading>
           <Paragraph margin={40} color="muted" size={500}>
-          ({movie.Year})
+            ({movie.Year})
           </Paragraph>
           <Button
             appearance="primary"
