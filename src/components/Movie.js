@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SideSheet, Paragraph, Button } from "evergreen-ui";
+import { SideSheet, Heading, Paragraph, Button, AddIcon } from "evergreen-ui";
 
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
@@ -8,22 +8,35 @@ const Movie = ({ movie }) => {
   const poster =
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
 
-    const [show, setShow] = useState(false)
-    const isShown = () => setShow(false)
-    
+  const [show, setShow] = useState(false);
+  const isShown = () => setShow(false);
+
   return (
     <div className="movie">
-
       <React.Fragment>
-      <SideSheet
-        isShown={show.isShown}
-        onCloseComplete={() => setShow({ isShown: false })}
-      >
-        <Paragraph margin={40}>{movie.Title}</Paragraph>
-        <Button>
-          Nominate
-        </Button>
-      </SideSheet>
+        <SideSheet
+          isShown={show.isShown}
+          onCloseComplete={() => setShow({ isShown: false })}
+        >
+          <img
+          width="400"
+          src={poster}>
+          </img>
+          <Heading margin={40} size={900}>{movie.Title}</Heading>
+          <Paragraph margin={40} size={500}>
+          ({movie.Year})
+          </Paragraph>
+          <Button
+            appearance="primary"
+            intent="success"
+            iconBefore={AddIcon}
+            margin={40}
+            // onClick={}
+          >
+            Nominate
+          </Button>
+        </SideSheet>
+      </React.Fragment>
 
       <h2>{movie.Title}</h2>
       <div>
@@ -34,10 +47,6 @@ const Movie = ({ movie }) => {
           onClick={() => setShow({ isShown: true })}
         />
       </div>
-      <p>({movie.Year})</p>
-    </React.Fragment>
-
-    
     </div>
   );
 };
