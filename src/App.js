@@ -3,14 +3,14 @@ import "./App.css";
 import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
-import { Spinner, Pane, ThemeProvider, defaultTheme } from "evergreen-ui";
+import { Spinner, Pane, ThemeProvider, defaultTheme, Alert, InlineAlert } from "evergreen-ui";
 
 const movieApiUrl = "http://www.omdbapi.com/&apikey=3ad7027";
 
 const newTheme = {
   ...defaultTheme,
-  spinnerColor: 'hotpink'
-}
+  spinnerColor: "hotpink",
+};
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -31,7 +31,7 @@ function App() {
     setErrorMessage(null);
 
     // fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=3ad7027`)
-    fetch('http://www.omdbapi.com/'+ '?s=' + searchValue +'&apikey=3ad7027')
+    fetch("http://www.omdbapi.com/" + "?s=" + searchValue + "&apikey=3ad7027")
       .then((response) => response.json())
       .then((jsonResponse) => {
         if (jsonResponse.Response === "True") {
@@ -51,12 +51,19 @@ function App() {
       <div className="movies">
         {loading && !errorMessage ? (
           <Pane marginX="auto" marginY={120}>
-          <ThemeProvider value={newTheme}>
-            <Spinner size={80} />
-          </ThemeProvider>
+            <ThemeProvider value={newTheme}>
+              <Spinner size={80} />
+            </ThemeProvider>
           </Pane>
         ) : errorMessage ? (
-          <div className="errorMessage">{errorMessage}</div>
+          // <div className="errorMessage">
+          //   <Alert intent="warning" title={errorMessage} />
+          // </div>
+          <div className="errorMessage">
+            <InlineAlert intent="warning" >
+            {errorMessage}
+            </InlineAlert>
+          </div>
         ) : (
           movies.map((movie, index) => (
             <Movie key={`${index}-${movie.Title}`} movie={movie} />

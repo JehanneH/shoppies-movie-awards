@@ -50,16 +50,6 @@
 .errorMessage {
   margin: auto;
   margin-top: 1em;
-  padding: 3px;
-  font-weight: bold;
-  color: rgb(161, 15, 15);
-  border: solid;
-}
-
-.loading {
-  margin: 120px;
-  margin: 120px;
-  background-color: white;
 }
 
 .search {
