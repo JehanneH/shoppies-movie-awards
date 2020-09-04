@@ -19,11 +19,10 @@ const Movie = ({ movie }) => {
           onCloseComplete={() => setShow({ isShown: false })}
         >
           <img
-          width="400"
           src={poster}>
           </img>
           <Heading margin={40} size={900}>{movie.Title}</Heading>
-          <Paragraph margin={40} size={500}>
+          <Paragraph margin={40} color="muted" size={500}>
           ({movie.Year})
           </Paragraph>
           <Button
