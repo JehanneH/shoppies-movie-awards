@@ -31,7 +31,6 @@ function App() {
     setLoading(true);
     setErrorMessage(null);
 
-    // fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=3ad7027`)
     fetch("http://www.omdbapi.com/" + "?s=" + searchValue + "&type=movie&apikey=3ad7027")
       .then((response) => response.json())
       .then((jsonResponse) => {
