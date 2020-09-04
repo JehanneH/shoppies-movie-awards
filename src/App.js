@@ -5,7 +5,8 @@ import Movie from "./components/Movie";
 import Search from "./components/Search";
 import { Spinner, Pane, ThemeProvider, defaultTheme, Alert, InlineAlert } from "evergreen-ui";
 
-const movieApiUrl = "http://www.omdbapi.com/&apikey=3ad7027";
+const movieApiUrl = "http://www.omdbapi.com/&type=movie&apikey=3ad7027";
+
 
 const newTheme = {
   ...defaultTheme,
@@ -31,7 +32,7 @@ function App() {
     setErrorMessage(null);
 
     // fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=3ad7027`)
-    fetch("http://www.omdbapi.com/" + "?s=" + searchValue + "&apikey=3ad7027")
+    fetch("http://www.omdbapi.com/" + "?s=" + searchValue + "&type=movie&apikey=3ad7027")
       .then((response) => response.json())
       .then((jsonResponse) => {
         if (jsonResponse.Response === "True") {
