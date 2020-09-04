@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
 import {
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header text="The Shoppies" />
+      <Navbar text="The Shoppies" />
       <Search search={search} />
       <div className="movies">
         {loading && !errorMessage ? (
