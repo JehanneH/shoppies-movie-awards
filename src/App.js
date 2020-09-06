@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
+import { useLocalStore, useObserver } from "mobx-react";
 import {
   Spinner,
   Pane,
@@ -11,6 +12,21 @@ import {
   Alert,
   InlineAlert,
 } from "evergreen-ui";
+
+const StoreContext = createContext();
+
+const StoreProvider = ({ children }) => {
+  const store = useLocalStore(() => ({
+    movies: ["Now and Then"]
+  }));
+
+  return (
+    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+  )
+}
+
+
+
 
 
 const newTheme = {
@@ -23,7 +39,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const [nomination, setNomination] = useState();
+  
 
 
   const search = (searchValue) => {
@@ -44,6 +60,7 @@ function App() {
   };
 
   return (
+    <StoreProvider>
     <div className="App">
       <Navbar text="The Shoppies" />
       <Search search={search} />
@@ -74,6 +91,7 @@ function App() {
         )}
       </div>
     </div>
+    </StoreProvider>
   );
 }
 

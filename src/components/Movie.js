@@ -7,21 +7,16 @@ const defaultImagePlaceholder =
 export default function Movie ({ movie, Title, Year, id }) {
   const [show, setShow] = useState(false);
 
- 
-
   const poster =
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
 
-
-  
-
   return (
     <div className="movie">
-      <h2>{movie.Title}</h2>
+      <h2>{Title}</h2>
       <div>
         <img
           width="200"
-          alt={`The movie titled: ${movie.Title}`}
+          alt={`The movie titled: ${Title}`}
           src={poster}
           onClick={() => setShow({ isShown: true })}
         />
@@ -33,7 +28,7 @@ export default function Movie ({ movie, Title, Year, id }) {
         >
           <img src={poster} alt=""></img>
           <Heading margin={40} size={900}>
-            {movie.Title}
+            {Title}
           </Heading>
           <Paragraph margin={40} color="muted" size={500}>
             ({Year})
