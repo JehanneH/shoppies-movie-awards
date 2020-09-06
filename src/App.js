@@ -24,6 +24,8 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
+  const [nominations, setNominations] = useState()
+
   useEffect(() => {
     fetch(movieApiUrl)
       .then((response) => response.json())
@@ -70,7 +72,7 @@ function App() {
           </div>
         ) : (
           movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
+            <Movie key={`${index}-${movie.Title}`} movie={movie} Title={movie.Title} Year={movie.Year} id={movie.imdbID} />
           ))
         )}
       </div>

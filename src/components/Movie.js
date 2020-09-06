@@ -1,17 +1,37 @@
 import React, { useState } from "react";
 import { SideSheet, Heading, Paragraph, Button, AddIcon } from "evergreen-ui";
+import Nominations from "./Nominations";
 
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
 
-const Movie = ({ movie }) => {
+export default function Movie ({ movie, Title, Year, id }) {
+  const [show, setShow] = useState(false);
+
+ 
+
   const poster =
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
 
-  const [show, setShow] = useState(false);
+  // function addNomination() {
+  //   setNominations((nominations) => {
+  //     const newNomination = new Map(nominations)
+  //     newNominations.set(movie.imdbID, { Title })
+  //   })
+  // }
+  
 
   return (
     <div className="movie">
+      <h2>{movie.Title}</h2>
+      <div>
+        <img
+          width="200"
+          alt={`The movie titled: ${movie.Title}`}
+          src={poster}
+          onClick={() => setShow({ isShown: true })}
+        />
+      </div>
       <React.Fragment>
         <SideSheet
           isShown={show.isShown}
@@ -22,7 +42,7 @@ const Movie = ({ movie }) => {
             {movie.Title}
           </Heading>
           <Paragraph margin={40} color="muted" size={500}>
-            ({movie.Year})
+            ({Year})
           </Paragraph>
           <Button
             appearance="primary"
@@ -35,18 +55,6 @@ const Movie = ({ movie }) => {
           </Button>
         </SideSheet>
       </React.Fragment>
-
-      <h2>{movie.Title}</h2>
-      <div>
-        <img
-          width="200"
-          alt={`The movie titled: ${movie.Title}`}
-          src={poster}
-          onClick={() => setShow({ isShown: true })}
-        />
-      </div>
     </div>
   );
 };
-
-export default Movie;

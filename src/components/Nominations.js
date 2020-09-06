@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Pane, Dialog, Button, BanCircleIcon, UnorderedList, ListItem, Paragraph } from "evergreen-ui";
 
-export default function Nominations() {
+export default function Nominations(props) {
   const [show, setShow] = useState(false);
+  
 
   return (
     <div>
