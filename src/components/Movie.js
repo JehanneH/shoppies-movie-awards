@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { SideSheet, Heading, Paragraph, Button, AddIcon } from "evergreen-ui";
-import Nominations from "./Nominations";
 
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
@@ -13,12 +12,7 @@ export default function Movie ({ movie, Title, Year, id }) {
   const poster =
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
 
-  // function addNomination() {
-  //   setNominations((nominations) => {
-  //     const newNomination = new Map(nominations)
-  //     newNominations.set(movie.imdbID, { Title })
-  //   })
-  // }
+
   
 
   return (

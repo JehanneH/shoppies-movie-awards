@@ -12,7 +12,6 @@ import {
   InlineAlert,
 } from "evergreen-ui";
 
-const movieApiUrl = "http://www.omdbapi.com/&type=movie&apikey=3ad7027";
 
 const newTheme = {
   ...defaultTheme,
@@ -24,16 +23,8 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const [nominations, setNominations] = useState()
+  const [nomination, setNomination] = useState();
 
-  useEffect(() => {
-    fetch(movieApiUrl)
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        setMovies(jsonResponse.Search);
-        setLoading(false);
-      });
-  }, []);
 
   const search = (searchValue) => {
     setLoading(true);
@@ -72,7 +63,13 @@ function App() {
           </div>
         ) : (
           movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} Title={movie.Title} Year={movie.Year} id={movie.imdbID} />
+            <Movie
+              key={`${index}-${movie.Title}`}
+              movie={movie}
+              Title={movie.Title}
+              Year={movie.Year}
+              id={movie.imdbID}
+            />
           ))
         )}
       </div>
