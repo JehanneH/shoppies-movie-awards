@@ -84,6 +84,11 @@
   border-radius: 30px;
 }
 
+#search-button {
+  margin-left: 0.5em;
+  border-radius: 30px;
+}
+
 /* @media screen and (min-width: 694px) and (max-width: 915px) {
   .movie {
     max-width: 33%;
