@@ -3,24 +3,27 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  height: 70px;
+  background-color: #e4e7f7;
+  height: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
   padding: 20px;
-  cursor: pointer;
+  cursor: default;
 }
 
+.header-button {
+  
+}
 
 /* new css for movie component */
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .movies {
   display: flex;

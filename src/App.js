@@ -46,6 +46,7 @@ function App() {
       });
   };
 
+
   return (
     <GlobalProvider>
     <div className="App">
