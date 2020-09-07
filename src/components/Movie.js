@@ -47,24 +47,26 @@ export default function Movie({ movie, Title, Year }) {
           <Paragraph margin={40} color="muted" size={500}>
             ({Year})
           </Paragraph>
-          {nominateList.length >= 5 &&
+          <div>
+          {nominateList.length >= 5 ?
+          
           <Alert
           intent="danger"
           title="You have added the max (5) amount of nominations to your List"
         />
+      : <Button
+      appearance="primary"
+      intent="success"
+      iconBefore={AddIcon}
+      margin={40}
+      disabled={nominationDisabled}
+      onClick={() => addMovieToNominateList(movie)}
+    >
+      Nominate
+    </Button>
           }
+          </div>
           
-
-          <Button
-            appearance="primary"
-            intent="success"
-            iconBefore={AddIcon}
-            margin={40}
-            disabled={nominationDisabled}
-            onClick={() => addMovieToNominateList(movie)}
-          >
-            Nominate
-          </Button>
         </SideSheet>
       </React.Fragment>
     </div>
