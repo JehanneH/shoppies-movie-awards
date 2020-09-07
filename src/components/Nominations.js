@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import { Pane, Dialog, Button, BanCircleIcon, UnorderedList, ListItem, Paragraph } from "evergreen-ui";
+import Movie from "./Movie";
+import {
+  Pane,
+  Dialog,
+  Button,
+  BanCircleIcon,
+  UnorderedList,
+  ListItem,
+  Paragraph,
+} from "evergreen-ui";
 
 export default function Nominations(props) {
   const [show, setShow] = useState(false);
-  
 
   return (
     <div>
@@ -14,6 +22,7 @@ export default function Nominations(props) {
           onCloseComplete={() => setShow({ isShown: false })}
           hasFooter={false}
         >
+         
           <UnorderedList icon={BanCircleIcon} iconColor="danger">
             <ListItem>Now and Then</ListItem>
             <ListItem>Pirates of the Caribbean: The Curse of the Black Pearl</ListItem>
@@ -22,8 +31,11 @@ export default function Nominations(props) {
             <ListItem>13 Going on 30</ListItem>
             
           </UnorderedList>
+
+         
           <div>
-          Remove a nomination from your list by clicking the <BanCircleIcon color="danger" /> icon
+            Remove a nomination from your list by clicking the{" "}
+            <BanCircleIcon color="danger" /> icon
           </div>
         </Dialog>
 

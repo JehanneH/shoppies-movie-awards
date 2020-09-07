@@ -5,7 +5,7 @@ export default function Navbar(props) {
   return (
     <header className="App-header">
       <h2>{props.text}</h2>
-      <Nominations />
+      <Nominations/>
     </header>
   );
 }

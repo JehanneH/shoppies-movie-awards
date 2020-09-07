@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 import { SideSheet, Heading, Paragraph, Button, AddIcon } from "evergreen-ui";
 
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
 
 export default function Movie ({ movie, Title, Year, id }) {
+
+  const {
+    AddMovieToNominations
+  } = useContext()
   const [show, setShow] = useState(false);
 
   const poster =
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
 
+
+ 
   return (
     <div className="movie">
       <h2>{Title}</h2>
@@ -38,7 +45,6 @@ export default function Movie ({ movie, Title, Year, id }) {
             intent="success"
             iconBefore={AddIcon}
             margin={40}
-            // onClick={}
           >
             Nominate
           </Button>
