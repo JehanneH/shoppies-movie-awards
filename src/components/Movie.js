@@ -15,7 +15,6 @@ export default function Movie({ movie, Title, Year }) {
 
   let storedMovie = nominateList.find((o) => o.imdbID === movie.imdbID);
 
-
   const nominationDisabled = storedMovie ? true : false;
 
   return (
@@ -28,16 +27,6 @@ export default function Movie({ movie, Title, Year }) {
           src={poster}
           onClick={() => setShow({ isShown: true })}
         />
-        <Button
-            appearance="primary"
-            intent="success"
-            iconBefore={AddIcon}
-            margin={40}
-            disabled={nominationDisabled}
-            onClick={() => addMovieToNominateList(Title)}
-          >
-            Nominate
-          </Button>
       </div>
       <React.Fragment>
         <SideSheet
@@ -51,7 +40,16 @@ export default function Movie({ movie, Title, Year }) {
           <Paragraph margin={40} color="muted" size={500}>
             ({Year})
           </Paragraph>
-          
+          <Button
+            appearance="primary"
+            intent="success"
+            iconBefore={AddIcon}
+            margin={40}
+            disabled={nominationDisabled}
+            onClick={() => addMovieToNominateList(movie)}
+          >
+            Nominate
+          </Button>
         </SideSheet>
       </React.Fragment>
     </div>
