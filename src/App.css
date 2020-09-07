@@ -20,10 +20,6 @@
 }
 
 
-* {
-  box-sizing: border-box;
-}
-
 .movies {
   display: flex;
   flex-wrap: wrap;
@@ -31,13 +27,16 @@
   align-items: center;
 }
 
+
+
+
 /* .App-header h2 {
   margin: 0;
 } */
 
 
 .movie {
-  padding: 15px 25px 15px 25px;
+  padding: 15px 15px 15px 15px;
   margin: 15px 25px 15px 25px;
   width: 50%;
   border: solid;
@@ -45,8 +44,16 @@
   height: auto;
 }
 
+
 .posters {
   border-radius: 20px;
+  display: block;
+  width: 70%;
+  height: auto;
+}
+
+.posters:hover {
+  box-shadow: 0 0 0 2px red;
 }
 
 .movie-card {

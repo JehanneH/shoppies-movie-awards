@@ -36,6 +36,7 @@ export default function Movie({ movie, Title, Year, imdbID }) {
             onClick={() => setShow({ isShown: true })}
           />
         </div>
+        
         <div className="movie-card-info">
         <h3>{Title}</h3>
         <Paragraph>({Year})</Paragraph>
