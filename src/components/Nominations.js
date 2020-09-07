@@ -25,6 +25,9 @@ export default function Nominations({ movie, type }) {
           onCloseComplete={() => setShow({ isShown: false })}
           hasFooter={false}
         >
+          {/* display amount of movies maybe? */}
+          {nominateList.length} {nominateList.length === 1 ? "Movie" : "Movies"}
+
           {nominateList.length > 0 ? (
             <div>
               {nominateList.map((movie) => (
@@ -47,7 +50,7 @@ export default function Nominations({ movie, type }) {
           )}
 
           <div>
-            Remove a nomination from your list by clicking the{" "}
+            Remove a nomination from your list by clicking the
             <BanCircleIcon color="danger" /> icon
           </div>
         </Dialog>
