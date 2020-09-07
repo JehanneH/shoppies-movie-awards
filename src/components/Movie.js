@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import { SideSheet, Heading, Paragraph, Button, AddIcon } from "evergreen-ui";
+import { SideSheet, Heading, Paragraph, Button, AddIcon, Alert } from "evergreen-ui";
 
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
@@ -40,6 +40,11 @@ export default function Movie({ movie, Title, Year }) {
           <Paragraph margin={40} color="muted" size={500}>
             ({Year})
           </Paragraph>
+        
+            <Alert
+                intent="danger"
+                title="You have already added the max (5) Nominations to your List"
+              />
           <Button
             appearance="primary"
             intent="success"

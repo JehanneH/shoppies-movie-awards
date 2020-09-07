@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { GlobalContext } from "../context/GlobalState"
+import { GlobalContext } from "../context/GlobalState";
 import {
   Pane,
   Dialog,
@@ -13,7 +13,7 @@ import {
 export default function Nominations(props) {
   const [show, setShow] = useState(false);
 
-  const {nominateList} = useContext(GlobalContext)
+  const { nominateList } = useContext(GlobalContext);
   return (
     <div>
       <Pane>
@@ -23,24 +23,23 @@ export default function Nominations(props) {
           onCloseComplete={() => setShow({ isShown: false })}
           hasFooter={false}
         >
+          {nominateList.length > 0 ? (
+            <div>
+              {nominateList.map((movie) => (
+                <UnorderedList icon={BanCircleIcon} iconColor="danger">
+                  <ListItem>{movie.Title}</ListItem>
+                </UnorderedList>
+              ))}
+            </div>
+          ) : (
+            <div className="errorMessage">
+              <Alert
+                intent="danger"
+                title="You don't have any nominations yet!"
+              />
+            </div>
+          )}
 
-          {nominateList.length > 3 ? (
-  <div>
-  {nominateList.map((movie) => (
-    <UnorderedList icon={BanCircleIcon} iconColor="danger">
-    <ListItem>{movie.Title}</ListItem>
-    
-  </UnorderedList>
-  ))}
- </div> ) : (
-    <div className="errorMessage">
-    <Alert intent="danger" title="You don't have any nominations yet!" />
-    </div>
- )}
-        
-          
-
-         
           <div>
             Remove a nomination from your list by clicking the{" "}
             <BanCircleIcon color="danger" /> icon
