@@ -18,7 +18,7 @@ import {
 
 const newTheme = {
   ...defaultTheme,
-  spinnerColor: "hotpink",
+  spinnerColor: "darkgreen",
 };
 
 function App() {
@@ -73,7 +73,8 @@ function App() {
               movie={movie}
               Title={movie.Title}
               Year={movie.Year}
-              id={movie.imdbID}
+              imdbID={movie.imdbID}
+
             />
           ))
         )}

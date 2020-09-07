@@ -26,7 +26,7 @@ export default function Search(props) {
         type="text"
       />
       <Button onClick={callSearchFunction} type="submit" value="search">
-        Search{" "}
+        Search 
       </Button>
     </form>
   );

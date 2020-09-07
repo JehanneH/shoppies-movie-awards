@@ -59,6 +59,7 @@ export default function Nominations({ movie, type }) {
 
         <Button
           margin={40}
+          height={48}
           intent="success"
           appearance="minimal"
           onClick={() => setShow({ isShown: true })}

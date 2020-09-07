@@ -12,7 +12,7 @@ import {
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
 
-export default function Movie({ movie, Title, Year }) {
+export default function Movie({ movie, Title, Year, imdbID }) {
   const { addMovieToNominateList, nominateList } = useContext(GlobalContext);
 
   const [show, setShow] = useState(false);
@@ -48,27 +48,27 @@ export default function Movie({ movie, Title, Year }) {
             ({Year})
           </Paragraph>
           <div>
-          {nominateList.length >= 5 ?
-          
-          <Alert
-          intent="danger"
-          title="You have added the max (5) amount of nominations to your List"
-          >
-            If you wish to change your nominations, you can remove a movie and add another one"
-          </Alert>
-      : <Button
-      appearance="primary"
-      intent="success"
-      iconBefore={AddIcon}
-      margin={40}
-      disabled={nominationDisabled}
-      onClick={() => addMovieToNominateList(movie)}
-    >
-      Nominate
-    </Button>
-          }
+            {nominateList.length >= 5 ? (
+              <Alert
+                intent="danger"
+                title="You have added the max (5) amount of nominations to your List"
+              >
+                If you wish to change your nominations, you can remove a movie
+                and add another one"
+              </Alert>
+            ) : (
+              <Button
+                appearance="primary"
+                intent="success"
+                iconBefore={AddIcon}
+                margin={40}
+                disabled={nominationDisabled}
+                onClick={() => addMovieToNominateList(movie)}
+              >
+                Nominate
+              </Button>
+            )}
           </div>
-          
         </SideSheet>
       </React.Fragment>
     </div>
