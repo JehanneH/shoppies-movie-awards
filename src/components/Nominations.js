@@ -13,8 +13,9 @@ import {
 export default function Nominations({ movie, type }) {
   const [show, setShow] = useState(false);
 
-  const { nominateList, removeMovieFromNominateList } = useContext(GlobalContext);
-
+  const { nominateList, removeMovieFromNominateList } = useContext(
+    GlobalContext
+  );
 
   return (
     <div>
@@ -27,7 +28,6 @@ export default function Nominations({ movie, type }) {
         >
           {/* display amount of movies maybe? */}
           {nominateList.length} {nominateList.length === 1 ? "Movie" : "Movies"}
-
           {nominateList.length > 0 ? (
             <div>
               {nominateList.map((movie) => (
@@ -44,18 +44,27 @@ export default function Nominations({ movie, type }) {
             <div className="errorMessage">
               <Alert
                 intent="warning"
-                title="You don't have any nominations in your list!">
-                  To add nominations to your list search for your favourite movies and click nominate
-                </Alert>
+                title="You don't have any nominations in your list!"
+              >
+                To add nominations to your list search for your favourite movies
+                and click nominate
+              </Alert>
             </div>
           )}
-
           <div>
-            Remove a nomination from your list by clicking the <BanCircleIcon color="danger" /> icon
+            Remove a nomination from your list by clicking the{" "}
+            <BanCircleIcon color="danger" /> icon
           </div>
         </Dialog>
 
-        <Button onClick={() => setShow({ isShown: true })}>Nominations</Button>
+        <Button
+          margin={40}
+          intent="success"
+          appearance="minimal"
+          onClick={() => setShow({ isShown: true })}
+        >
+          Nominations
+        </Button>
       </Pane>
     </div>
   );
