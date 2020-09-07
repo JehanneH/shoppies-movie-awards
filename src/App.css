@@ -39,11 +39,11 @@
   padding: 15px 15px 15px 15px;
   margin: 15px 25px 15px 25px;
   width: 50%;
-  border: solid;
+  /* border: solid; */
   border-radius: 30px;
   height: auto;
+  box-shadow: 1px 1px 12px 4px rgba(0,0,0,0.31);
 }
-
 
 .posters {
   border-radius: 20px;
@@ -58,6 +58,7 @@
 
 .movie-card {
   display: flex;
+  
 }
 
 .movie-card-info {
