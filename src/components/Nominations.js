@@ -13,9 +13,9 @@ import {
 export default function Nominations({ movie, type }) {
   const [show, setShow] = useState(false);
 
-  const { nominateList } = useContext(GlobalContext);
+  const { nominateList, removeMovieFromNominateList } = useContext(GlobalContext);
 
-  const { removeMovieFromNominateList } = useContext(GlobalContext);
+
   return (
     <div>
       <Pane>
