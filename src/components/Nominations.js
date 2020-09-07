@@ -10,10 +10,12 @@ import {
   Alert,
 } from "evergreen-ui";
 
-export default function Nominations(props) {
+export default function Nominations({ movie, type }) {
   const [show, setShow] = useState(false);
 
   const { nominateList } = useContext(GlobalContext);
+
+  const { removeMovieFromNominateList } = useContext(GlobalContext);
   return (
     <div>
       <Pane>
@@ -26,7 +28,11 @@ export default function Nominations(props) {
           {nominateList.length > 0 ? (
             <div>
               {nominateList.map((movie) => (
-                <UnorderedList icon={BanCircleIcon} iconColor="danger">
+                <UnorderedList
+                  icon={BanCircleIcon}
+                  iconColor="danger"
+                  onClick={() => removeMovieFromNominateList(movie.imdbID)}
+                >
                   <ListItem>{movie.Title}</ListItem>
                 </UnorderedList>
               ))}
