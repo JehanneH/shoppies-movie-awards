@@ -41,10 +41,11 @@ export default function Movie({ movie, Title, Year }) {
             ({Year})
           </Paragraph>
         
-            <Alert
+            {/* <Alert
                 intent="danger"
                 title="You have already added the max (5) Nominations to your List"
-              />
+              /> */}
+
           <Button
             appearance="primary"
             intent="success"
