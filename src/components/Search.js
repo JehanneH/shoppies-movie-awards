@@ -21,12 +21,14 @@ export default function Search(props) {
   return (
     <form className="search">
       <SearchInput
+        id="search-bar"
         value={searchValue}
         onChange={handleSearchInputChanges}
+        placeholder="Type a movie here..."
         type="text"
       />
-      <Button onClick={callSearchFunction} type="submit" value="search">
-        Search 
+      <Button id="search-button" onClick={callSearchFunction} type="submit" value="search">
+        Search
       </Button>
     </form>
   );

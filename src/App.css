@@ -42,13 +42,13 @@
   /* border: solid; */
   border-radius: 30px;
   height: auto;
-  box-shadow: 1px 1px 12px 4px rgba(0,0,0,0.31);
+  box-shadow: 1px 1px 6px 4px rgba(0,0,0,0.31);
 }
 
 .posters {
   border-radius: 20px;
   display: block;
-  width: 70%;
+  width: 7em;
   height: auto;
 }
 
@@ -77,8 +77,12 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 7em;
+  margin-bottom: 1em;
 }
 
+#search-bar {
+  border-radius: 30px;
+}
 
 /* @media screen and (min-width: 694px) and (max-width: 915px) {
   .movie {
