@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Movie from "./Movie";
+import { GlobalContext } from "../context/GlobalState"
 import {
   Pane,
   Dialog,
@@ -13,6 +14,7 @@ import {
 export default function Nominations(props) {
   const [show, setShow] = useState(false);
 
+  const {nominateList} = useContext(GlobalContext)
   return (
     <div>
       <Pane>
@@ -22,15 +24,18 @@ export default function Nominations(props) {
           onCloseComplete={() => setShow({ isShown: false })}
           hasFooter={false}
         >
-         
-          <UnorderedList icon={BanCircleIcon} iconColor="danger">
+         {nominateList.map((movie) => (
+           <p>{movie.Title}</p>
+         ))}
+
+          {/* <UnorderedList icon={BanCircleIcon} iconColor="danger">
             <ListItem>Now and Then</ListItem>
             <ListItem>Pirates of the Caribbean: The Curse of the Black Pearl</ListItem>
             <ListItem>Bend It Like Beckham</ListItem>
             <ListItem>Happy-Go-Lucky</ListItem>
             <ListItem>13 Going on 30</ListItem>
             
-          </UnorderedList>
+          </UnorderedList> */}
 
          
           <div>
