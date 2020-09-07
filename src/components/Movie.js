@@ -47,11 +47,13 @@ export default function Movie({ movie, Title, Year }) {
           <Paragraph margin={40} color="muted" size={500}>
             ({Year})
           </Paragraph>
-
-          {/* <Alert
-                intent="danger"
-                title="You have already added the max (5) Nominations to your List"
-              /> */}
+          {nominateList.length >= 5 &&
+          <Alert
+          intent="danger"
+          title="You have added the max (5) amount of nominations to your List"
+        />
+          }
+          
 
           <Button
             appearance="primary"

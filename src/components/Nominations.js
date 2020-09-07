@@ -43,15 +43,14 @@ export default function Nominations({ movie, type }) {
           ) : (
             <div className="errorMessage">
               <Alert
-                intent="danger"
-                title="You don't have any nominations yet!"
+                intent="warning"
+                title="You don't have any nominations in your list, search some movies to add to your list!"
               />
             </div>
           )}
 
           <div>
-            Remove a nomination from your list by clicking the
-            <BanCircleIcon color="danger" /> icon
+            Remove a nomination from your list by clicking the <BanCircleIcon color="danger" /> icon
           </div>
         </Dialog>
 
