@@ -44,8 +44,9 @@ export default function Nominations({ movie, type }) {
             <div className="errorMessage">
               <Alert
                 intent="warning"
-                title="You don't have any nominations in your list, search some movies to add to your list!"
-              />
+                title="You don't have any nominations in your list!">
+                  To add nominations to your list search for your favourite movies and click nominate
+                </Alert>
             </div>
           )}
 
