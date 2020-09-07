@@ -26,52 +26,55 @@ export default function Movie({ movie, Title, Year, imdbID }) {
 
   return (
     <div className="movie">
-      <h3>{Title}</h3>
-      <div>
-        <img
-        className="posters"
-          width="200"
-          alt={`The movie titled: ${Title}`}
-          src={poster}
-          onClick={() => setShow({ isShown: true })}
-        />
+      <div className="movie-card">
+        <div>
+          <img
+            className="posters"
+            width="200"
+            alt={`The movie titled: ${Title}`}
+            src={poster}
+            onClick={() => setShow({ isShown: true })}
+          />
+        </div>
+        <div className="movie-card-info">
+        <h3>{Title}</h3>
+        <Paragraph>({Year})</Paragraph>
+        </div>
       </div>
-      <React.Fragment>
-        <SideSheet
-          isShown={show.isShown}
-          onCloseComplete={() => setShow({ isShown: false })}
-        >
-          <img src={poster} alt=""></img>
-          <Heading margin={40} size={900}>
-            {Title}
-          </Heading>
-          <Paragraph margin={40} color="muted" size={500}>
-            ({Year})
-          </Paragraph>
-          <div>
-            {nominateList.length >= 5 ? (
-              <Alert
-                intent="danger"
-                title="You have added the max (5) amount of nominations to your List"
-              >
-                If you wish to change your nominations, you can remove a movie
-                and add another one"
-              </Alert>
-            ) : (
-              <Button
-                appearance="primary"
-                intent="success"
-                iconBefore={AddIcon}
-                margin={40}
-                disabled={nominationDisabled}
-                onClick={() => addMovieToNominateList(movie)}
-              >
-                Nominate
-              </Button>
-            )}
-          </div>
-        </SideSheet>
-      </React.Fragment>
+      <SideSheet
+        isShown={show.isShown}
+        onCloseComplete={() => setShow({ isShown: false })}
+      >
+        <img src={poster} alt=""></img>
+        <Heading margin={40} size={900}>
+          {Title}
+        </Heading>
+        <Paragraph margin={40} color="muted" size={500}>
+          ({Year})
+        </Paragraph>
+        <div>
+          {nominateList.length >= 5 ? (
+            <Alert
+              intent="danger"
+              title="You have added the max (5) amount of nominations to your List"
+            >
+              If you wish to change your nominations, you can remove a movie and
+              add another one"
+            </Alert>
+          ) : (
+            <Button
+              appearance="primary"
+              intent="success"
+              iconBefore={AddIcon}
+              margin={40}
+              disabled={nominationDisabled}
+              onClick={() => addMovieToNominateList(movie)}
+            >
+              Nominate
+            </Button>
+          )}
+        </div>
+      </SideSheet>
     </div>
   );
 }
