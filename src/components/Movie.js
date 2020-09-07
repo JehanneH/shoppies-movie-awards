@@ -5,13 +5,18 @@ import { SideSheet, Heading, Paragraph, Button, AddIcon } from "evergreen-ui";
 const defaultImagePlaceholder =
   "https://critics.io/img/movies/poster-placeholder.png";
 
-export default function Movie({ movie, Title, Year, id }) {
-  const { addMovieToNominateList } = useContext(GlobalContext);
+export default function Movie({ movie, Title, Year }) {
+  const { addMovieToNominateList, nominateList } = useContext(GlobalContext);
 
   const [show, setShow] = useState(false);
 
   const poster =
     movie.Poster === "N/A" ? defaultImagePlaceholder : movie.Poster;
+
+  let storedMovie = nominateList.find((o) => o.imdbID === movie.imdbID);
+
+
+  const nominationDisabled = storedMovie ? true : false;
 
   return (
     <div className="movie">
@@ -23,6 +28,16 @@ export default function Movie({ movie, Title, Year, id }) {
           src={poster}
           onClick={() => setShow({ isShown: true })}
         />
+        <Button
+            appearance="primary"
+            intent="success"
+            iconBefore={AddIcon}
+            margin={40}
+            disabled={nominationDisabled}
+            onClick={() => addMovieToNominateList(Title)}
+          >
+            Nominate
+          </Button>
       </div>
       <React.Fragment>
         <SideSheet
@@ -36,15 +51,7 @@ export default function Movie({ movie, Title, Year, id }) {
           <Paragraph margin={40} color="muted" size={500}>
             ({Year})
           </Paragraph>
-          <Button
-            appearance="primary"
-            intent="success"
-            iconBefore={AddIcon}
-            margin={40}
-            onClick={() => addMovieToNominateList(Title)}
-          >
-            Nominate
-          </Button>
+          
         </SideSheet>
       </React.Fragment>
     </div>
