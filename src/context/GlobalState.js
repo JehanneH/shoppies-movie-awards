@@ -3,16 +3,19 @@ import AppReducer from "./AppReducer";
 
 // initial state
 const initialState = {
-  nominateList: [],
+  nominateList: localStorage.getItem('nominateList') ? JSON.parse(localStorage.getItem('nominateList')): []
 };
 
 // create context
 export const GlobalContext = createContext(initialState);
 
 // provider components
-
 export const GlobalProvider = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem('nominateList', JSON.stringify(state.nominateList))
+  }, [state]);
 
   // actions
   const addMovieToNominateList = (movie) => {
