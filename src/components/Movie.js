@@ -26,9 +26,10 @@ export default function Movie({ movie, Title, Year, imdbID }) {
 
   return (
     <div className="movie">
-      <h2>{Title}</h2>
+      <h3>{Title}</h3>
       <div>
         <img
+        className="posters"
           width="200"
           alt={`The movie titled: ${Title}`}
           src={poster}
