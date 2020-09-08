@@ -34,6 +34,7 @@ Check out my [deployed challenge!](https://sad-pike-030d48.netlify.app/)
 - I would have liked to add user functionality and a back end with a database
 - Another api request to gather more information about each movie (rating, description, director etc) to display in the larger movie card with the nominate button
 - More animation features: when adding and removing the movies from the nomination list
+- I would have liked to have a responsive design, however the style library I chose wasn't conducive to this
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
