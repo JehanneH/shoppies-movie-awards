@@ -9,7 +9,7 @@ This project was published by me as part of a project challenge for the [Shopify
 
 Shopify has branched out into movie award shows and we need your help. Please build us an app to help manage our movie nominations for the upcoming Shoppies.</em>
 
-Check out my [deployed challenge](https://sad-pike-030d48.netlify.app/)
+Check out my [deployed challenge!](https://sad-pike-030d48.netlify.app/)
 
 
 ## Features:
