@@ -43,7 +43,7 @@ function App() {
   return (
     <GlobalProvider>
       <div className="App">
-        <Navbar text="The Shoppies" />
+        <Navbar text="The Shopify Awards" />
         <Search search={search} />
         <div className="movies">
           {loading && !errorMessage ? (
