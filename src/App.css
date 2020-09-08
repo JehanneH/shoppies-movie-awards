@@ -29,6 +29,10 @@
 .nomination-info {
   margin-top: 1em;
 }
+.nominate-list {
+  margin-top: 1em;
+}
+
 .movies {
   display: flex;
   flex-wrap: wrap;
@@ -118,10 +122,10 @@
 .add-button {
   margin-top: -5em;
   margin-bottom: 1em;
-  border: solid;
+  /* border: solid;
   border-color: green;
   border-width: 1px;
-  border-radius: 5px
+  border-radius: 5px */
 }
 
 .errorMessage {

@@ -27,9 +27,11 @@ export default function Nominations({ movie, type }) {
           onCloseComplete={() => setShow({ isShown: false })}
           hasFooter={false}
         >
-          {nominateList.length} {nominateList.length === 1 ? "Movie" : "Movies"}
+          <div>
+          You have nominated {nominateList.length} {nominateList.length === 1 ? "movie" : "movies"}
+          </div>
           {nominateList.length > 0 ? (
-            <div>
+            <div className="nominate-list">
               {nominateList.map((movie) => (
                 <UnorderedList
                   icon={BanCircleIcon}
