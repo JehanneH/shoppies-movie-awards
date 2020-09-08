@@ -8,6 +8,7 @@ import {
   UnorderedList,
   ListItem,
   Alert,
+  FilmIcon
 } from "evergreen-ui";
 
 export default function Nominations({ movie, type }) {
@@ -50,17 +51,18 @@ export default function Nominations({ movie, type }) {
               </Alert>
             </div>
           )}
-          <div>
+          <div className="nomination-info">
             Remove a nomination from your list by clicking the{" "}
             <BanCircleIcon color="danger" /> icon
           </div>
         </Dialog>
 
         <Button
-          margin={40}
+          marginTop={5}
           height={48}
           intent="success"
           appearance="minimal"
+          iconBefore={FilmIcon}
           onClick={() => setShow({ isShown: true })}
         >
           Nominations
