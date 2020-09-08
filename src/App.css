@@ -87,6 +87,7 @@
   width: 70%;
   margin: 1em;
   border-radius: 30px;
+  box-shadow: 0px 0px 8px 5px rgba(184,182,184,1);
 }
 
 .title-card {
@@ -97,13 +98,20 @@
   justify-content: center;
   position: absolute;
   width: 90%;
-  height: 30%;
-  /* border: solid;
-  border-width: 1px; */
+  height: 40%;
   border-radius: 30px;
-  /* box-shadow: 0px 3px 6px 6px rgba(209,224,240,1); */
-  margin-top: 30em;
+  box-shadow: 0px 10px 8px 5px rgba(199,199,199,1);
+  margin-top: 27em;
   margin-left: 2em;
+}
+
+.add-button {
+  margin-top: -5em;
+  margin-bottom: 1em;
+  border: solid;
+  border-color: green;
+  border-width: 1px;
+  border-radius: 5px
 }
 
 .errorMessage {

@@ -51,18 +51,13 @@ export default function Movie({ movie, Title, Year, imdbID }) {
       <SideSheet
         isShown={show.isShown}
         onCloseComplete={() => setShow({ isShown: false })}
-        
       >
         <Pane className="side-sheet">
           <Card className="side-poster-container">
             <img className="side-poster" src={poster} alt=""></img>
           </Card>
           <div className="title-card">
-            <Heading size={600}>{Title}</Heading>
-            <Paragraph size={400} color="muted">
-              ({Year})
-            </Paragraph>
-            <div>
+            <div className="add-button">
               {nominateList.length >= 5 ? (
                 <Alert
                   intent="danger"
@@ -72,18 +67,24 @@ export default function Movie({ movie, Title, Year, imdbID }) {
                   another
                 </Alert>
               ) : (
-                <Button
-                  appearance="primary"
-                  intent="success"
-                  iconBefore={AddIcon}
-                  margin={10}
-                  disabled={nominationDisabled}
-                  onClick={() => addMovieToNominateList(movie)}
-                >
-                  Nominate
-                </Button>
+                <div>
+                  <Button
+                    appearance="minimal"
+                    intent="success"
+                    iconBefore={AddIcon}
+                    height={32}
+                    disabled={nominationDisabled}
+                    onClick={() => addMovieToNominateList(movie)}
+                  >
+                    Nominate
+                  </Button>
+                </div>
               )}
             </div>
+            <Heading size={600}>{Title}</Heading>
+            <Paragraph size={400} color="muted">
+              ({Year})
+            </Paragraph>
           </div>
         </Pane>
       </SideSheet>
