@@ -19,7 +19,6 @@
   z-index: 4;
 }
 
-
 .movies {
   display: flex;
   flex-wrap: wrap;
@@ -27,13 +26,9 @@
   align-items: center;
 }
 
-
-
-
 /* .App-header h2 {
   margin: 0;
 } */
-
 
 .movie {
   padding: 15px 15px 15px 15px;
@@ -42,7 +37,7 @@
   /* border: solid; */
   border-radius: 30px;
   height: auto;
-  box-shadow: 1px 1px 6px 4px rgba(0,0,0,0.31);
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.31);
 }
 
 .posters {
@@ -50,15 +45,15 @@
   display: block;
   width: 7em;
   height: auto;
+  margin: 0.2em;
 }
 
 .posters:hover {
-  box-shadow: 0 0 0 2px red;
+  box-shadow: 0px 0px 2px 6px rgba(237, 217, 3, 0.54);
 }
 
 .movie-card {
   display: flex;
-  
 }
 
 .movie-card-info {
@@ -68,12 +63,36 @@
 }
 .title-year {
   text-align: left;
-  margin: 1em;
+  margin: 1.5em;
 }
 
 .more-info {
   text-align: left;
   margin: 1.5em;
+}
+
+.side-poster-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  position: absolute;
+}
+.side-poster {
+  width: 80%;
+}
+
+.title-card {
+  background-color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  position: absolute;
+  z-index: 1000;
 }
 
 .errorMessage {
@@ -98,23 +117,3 @@
   margin-left: 0.5em;
   border-radius: 30px;
 }
-
-/* @media screen and (min-width: 694px) and (max-width: 915px) {
-  .movie {
-    max-width: 33%;
-  }
-}
-
-@media screen and (min-width: 652px) and (max-width: 693px) {
-  .movie {
-    max-width: 50%;
-  }
-}
-
-
-@media screen and (max-width: 651px) {
-  .movie {
-    max-width: 100%;
-    margin: auto;
-  }
-} */

@@ -7,6 +7,8 @@ import {
   Button,
   AddIcon,
   Alert,
+  Card,
+  Pane,
 } from "evergreen-ui";
 
 const defaultImagePlaceholder =
@@ -36,49 +38,55 @@ export default function Movie({ movie, Title, Year, imdbID }) {
             onClick={() => setShow({ isShown: true })}
           />
         </div>
-        
         <div className="movie-card-info">
           <div className="title-year">
-        <Heading size={600}>{Title}</Heading>
-        <Paragraph size={500}>({Year})</Paragraph>
+            <Heading size={600}>{Title}</Heading>
+            <Paragraph size={500}>({Year})</Paragraph>
+          </div>
+          <Paragraph className="more-info" color="muted" size={300}>
+            Click the poster for more
+          </Paragraph>
         </div>
-        <Paragraph className="more-info" color="muted" size={300}>Click the poster for more</Paragraph>
-        </div>
-        
       </div>
       <SideSheet
         isShown={show.isShown}
         onCloseComplete={() => setShow({ isShown: false })}
       >
-        <img src={poster} alt=""></img>
-        <Heading margin={40} size={900}>
-          {Title}
-        </Heading>
-        <Paragraph margin={40} color="muted" size={500}>
-          ({Year})
-        </Paragraph>
-        <div>
-          {nominateList.length >= 5 ? (
-            <Alert
-              intent="danger"
-              title="You have added the max (5) amount of nominations to your List"
-            >
-              If you wish to change your nominations, you can remove a movie and
-              add another one"
-            </Alert>
-          ) : (
-            <Button
-              appearance="primary"
-              intent="success"
-              iconBefore={AddIcon}
-              margin={40}
-              disabled={nominationDisabled}
-              onClick={() => addMovieToNominateList(movie)}
-            >
-              Nominate
-            </Button>
-          )}
-        </div>
+        <Pane>
+          <Card className="side-poster-container">
+            <img className="side-poster" src={poster} alt=""></img>
+          </Card>
+          <div
+            className="title-card"
+          >
+           <Heading size={600}>{Title}</Heading>
+            <Paragraph size={400} color="muted">
+              ({Year})
+            </Paragraph>
+            <div>
+              {nominateList.length >= 5 ? (
+                <Alert
+                  intent="danger"
+                  title="You have added the max (5) amount of nominations to your list"
+                >
+                  To change your nominations, you can remove a movie and add
+                  another
+                </Alert>
+              ) : (
+                <Button
+                  appearance="primary"
+                  intent="success"
+                  iconBefore={AddIcon}
+                  margin={10}
+                  disabled={nominationDisabled}
+                  onClick={() => addMovieToNominateList(movie)}
+                >
+                  Nominate
+                </Button>
+              )}
+            </div>
+          </div>
+          </Pane>
       </SideSheet>
     </div>
   );
