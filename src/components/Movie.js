@@ -51,15 +51,14 @@ export default function Movie({ movie, Title, Year, imdbID }) {
       <SideSheet
         isShown={show.isShown}
         onCloseComplete={() => setShow({ isShown: false })}
+        
       >
-        <Pane>
+        <Pane className="side-sheet">
           <Card className="side-poster-container">
             <img className="side-poster" src={poster} alt=""></img>
           </Card>
-          <div
-            className="title-card"
-          >
-           <Heading size={600}>{Title}</Heading>
+          <div className="title-card">
+            <Heading size={600}>{Title}</Heading>
             <Paragraph size={400} color="muted">
               ({Year})
             </Paragraph>
@@ -86,7 +85,7 @@ export default function Movie({ movie, Title, Year, imdbID }) {
               )}
             </div>
           </div>
-          </Pane>
+        </Pane>
       </SideSheet>
     </div>
   );
