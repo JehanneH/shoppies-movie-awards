@@ -26,7 +26,6 @@ export default function Nominations({ movie, type }) {
           onCloseComplete={() => setShow({ isShown: false })}
           hasFooter={false}
         >
-          {/* display amount of movies maybe? */}
           {nominateList.length} {nominateList.length === 1 ? "Movie" : "Movies"}
           {nominateList.length > 0 ? (
             <div>
