@@ -23,11 +23,18 @@ export default function Search(props) {
       <SearchInput
         id="search-bar"
         value={searchValue}
+        height={32}
         onChange={handleSearchInputChanges}
         placeholder="Type a movie here..."
         type="text"
       />
-      <Button id="search-button" onClick={callSearchFunction} type="submit" value="search">
+      <Button
+        id="search-button"
+        onClick={callSearchFunction}
+        type="submit"
+        height={32}
+        value="search"
+      >
         Search
       </Button>
     </form>

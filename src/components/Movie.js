@@ -38,9 +38,13 @@ export default function Movie({ movie, Title, Year, imdbID }) {
         </div>
         
         <div className="movie-card-info">
-        <h3>{Title}</h3>
-        <Paragraph>({Year})</Paragraph>
+          <div className="title-year">
+        <Heading size={600}>{Title}</Heading>
+        <Paragraph size={500}>({Year})</Paragraph>
         </div>
+        <Paragraph className="more-info" color="muted" size={300}>Click the poster for more</Paragraph>
+        </div>
+        
       </div>
       <SideSheet
         isShown={show.isShown}
