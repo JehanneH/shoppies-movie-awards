@@ -52,7 +52,7 @@ export default function Movie({ movie, Title, Year, imdbID }) {
         isShown={show.isShown}
         onCloseComplete={() => setShow({ isShown: false })}
       >
-        <Pane className="side-sheet">
+        <Pane id="side-sheet">
           <Card className="side-poster-container">
             <img className="side-poster" src={poster} alt=""></img>
           </Card>
