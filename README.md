@@ -36,5 +36,14 @@ Check out my [deployed challenge!](https://sad-pike-030d48.netlify.app/)
 - More animation features: when adding and removing the movies from the nomination list
 - I would have liked to have a responsive design, however the style library I chose wasn't conducive to this
 
+## Final Product
+
+!["movie search"](https://github.com/JehanneH/shoppies-movie-awards/blob/master/public/screenshots/Screen%20Shot%202020-09-08%20at%207.55.17%20PM.png?raw=true)
+!["more info"](https://github.com/JehanneH/shoppies-movie-awards/blob/master/public/screenshots/Screen%20Shot%202020-09-08%20at%207.56.04%20PM.png?raw=true)
+!["nominations"](https://github.com/JehanneH/shoppies-movie-awards/blob/master/public/screenshots/Screen%20Shot%202020-09-08%20at%207.56.38%20PM.png?raw=true)
+!["5 nominations"](https://github.com/JehanneH/shoppies-movie-awards/blob/master/public/screenshots/Screen%20Shot%202020-09-08%20at%207.57.17%20PM.png?raw=true)
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
