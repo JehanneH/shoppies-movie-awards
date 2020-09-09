@@ -70,7 +70,7 @@ export default function Movie({ movie, Title, Year, imdbID }) {
                     appearance="minimal"
                     intent="success"
                     iconBefore={AddIcon}
-                    height={32}
+                    height={30}
                     disabled={nominationDisabled}
                     onClick={() => addMovieToNominateList(movie)}
                   >
@@ -79,7 +79,7 @@ export default function Movie({ movie, Title, Year, imdbID }) {
                 </div>
               )}
             </div>
-            <Heading size={600}>{Title}</Heading>
+            <Heading size={500}>{Title}</Heading>
             <Paragraph size={400} color="muted">
               ({Year})
             </Paragraph>
