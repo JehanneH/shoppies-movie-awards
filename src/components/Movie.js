@@ -63,8 +63,6 @@ export default function Movie({ movie, Title, Year, imdbID }) {
                   intent="danger"
                   title="You have added the max (5) amount of nominations to your list"
                 >
-                  To change your nominations, you can remove a movie and add
-                  another
                 </Alert>
               ) : (
                 <div>
